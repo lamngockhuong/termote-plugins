@@ -1,0 +1,12 @@
+{
+  "name": "termote",
+  "description": "Coordinate the coding agents in your termote panes from one Claude Code or Codex session: their status, a task for one of them, its answer, its dialogs, and a new agent. Needs termote (https://termote.ohnice.app) running natively.",
+  "version": "2.32.0",
+  "author": {
+    "name": "Lam Ngoc Khuong"
+  },
+  "homepage": "https://termote.ohnice.app",
+  "repository": "https://github.com/lamngockhuong/termote-plugins",
+  "license": "MIT",
+  "keywords": ["termote", "orchestrator", "agents", "tmux", "herdr", "zellij"]
+}

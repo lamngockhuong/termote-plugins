@@ -1,0 +1,15 @@
+{
+  "name": "termote",
+  "description": "Termote plugins for coding agents",
+  "owner": {
+    "name": "Lam Ngoc Khuong"
+  },
+  "plugins": [
+    {
+      "name": "termote",
+      "description": "Coordinate the coding agents in your termote panes from one Claude Code or Codex session: their status, a task for one of them, its answer, its dialogs, and a new agent. Needs termote (https://termote.ohnice.app) running natively.",
+      "source": "./plugins/termote",
+      "version": "2.32.0"
+    }
+  ]
+}
