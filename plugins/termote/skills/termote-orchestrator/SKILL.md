@@ -33,6 +33,7 @@ then marked `"self": true` among the agents); when it is absent, ask the user wh
 termote agents list [--json]                  # every agent: pane id, workspace, name, status, directory
 termote agents read <pane> [--all] [--json]   # its last turn: the request and everything since
 termote agents send <pane> '<message>'        # or: ... | termote agents send <pane> -
+                                              # a message starting with ! (a shell command there) is refused: ask the agent instead
 termote agents wait <pane>@<seq>... [--timeout 20m]  # until one ends a turn or needs an answer
 termote agents answer <pane>                  # show the dialog it waits on
 termote agents answer <pane> <number>         # or: cancel | next | --text '<answer>'
@@ -329,8 +330,11 @@ each question's id across a compacted conversation, and the user can answer in t
   yourself, and never have it push a branch whose pull request merged (that makes the branch again
   on the remote): check `job ci <id> --refresh` first; `(finish_not_mine)`, `(finish_self_unknown)`
   the user cleans up in the PWA; `(finish_worktree_not_made)` the worktree was there before the
-  job, the user decides; `(finish_worktree_env)` the worktree holds `.env` files git ignores: ask
-  the user, never read or delete them yourself; `(finish_tab_busy)`, `(finish_worktree_shared)` the
+  job, the user decides; `(finish_worktree_env)` the worktree holds `.env` files git ignores that
+  the main checkout does not hold the same (the error names them): tell the user they can confirm
+  their removal in the PWA (the job's details, Review files), which then cleans the job up there, or
+  save or delete them and have you run it again; never read, copy or delete them yourself, and
+  there is no flag that skips the check; `(finish_tab_busy)`, `(finish_worktree_shared)` the
   user closes the other tab or workspace; `(finish_needs_close)`, `(finish_needs_remove)` run it
   with both flags; `(tab_confirm_required)` the user closes it in Herdr or the PWA.
 - `the server did not answer ... may have been made`: do not send again; `read` first to see
