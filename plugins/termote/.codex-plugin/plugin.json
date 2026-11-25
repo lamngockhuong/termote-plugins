@@ -1,6 +1,6 @@
 {
   "name": "termote",
-  "version": "2.32.0",
+  "version": "2.33.0",
   "description": "Coordinate the coding agents in your termote panes from one Claude Code or Codex session: their status, a task for one of them, its answer, its dialogs, and a new agent. Needs termote (https://termote.ohnice.app) running natively.",
   "author": {
     "name": "Lam Ngoc Khuong"
